@@ -61,6 +61,7 @@ platform_check_image() {
 	ew1200|\
 	ex2700|\
 	ex3700|\
+	ex6100|\
 	f7c027|\
 	firewrt|\
 	fonera20n|\

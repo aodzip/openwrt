@@ -239,6 +239,19 @@ define Device/ex3700-ex3800
 endef
 TARGET_DEVICES += ex3700-ex3800
 
+define Device/ex6100
+  NETGEAR_BOARD_ID := U12H248T00_NETGEAR
+  DTS := EX6100
+  BLOCKSIZE := 4k
+  IMAGE_SIZE := 7744k
+  IMAGES += factory.chk
+  IMAGE/factory.chk := $$(sysupgrade_bin) | check-size $$$$(IMAGE_SIZE) | netgear-chk
+  DEVICE_PACKAGES := -kmod-mt76 kmod-mt76x2
+  DEVICE_TITLE := Netgear EX6100
+  SUPPORTED_DEVICES := ex6100
+endef
+TARGET_DEVICES += ex6100
+
 define Device/gl-mt300a
   DTS := GL-MT300A
   IMAGE_SIZE := $(ralink_default_fw_size_16M)
